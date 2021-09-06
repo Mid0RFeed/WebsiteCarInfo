@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="p-3 mb-3 border-bottom">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a class="nav-link px-2 link-secondary">Карты</a></li>
+                <li>
+                    <select class="form-select" id="routeID">
+                      <option selected disabled>Выберите номер маршрута</option>
+                    </select>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</header>
+<main role="main" class="container content">
+    <div class="row align-items-center">
+        <div class="col-sm">
+            <div id="map" style="height: 400px"></div>
+            <div class="row">
+                <div class="col-sm">
+                    <canvas id="oilCostStatistic" width="400" height="400"></canvas>
+                </div>
+                <div class="col-sm">
+                    <canvas id="oilTempStatistic" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+{% endblock %}
